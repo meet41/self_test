@@ -1,4 +1,4 @@
-from celery import celery
+from celery import Celery
 
 celery_app = Celery(
     'process_order',
