@@ -3,7 +3,7 @@ from celery_app import celery_app
 
 
 @celery_app.task(bind=True,max_retries=2,delay=3)
-async def process_order(self, order_id: str,items: list):
+def process_order(self, order_id: str,items: list):
     try:
         list1 = []
         seen=set()
@@ -11,7 +11,7 @@ async def process_order(self, order_id: str,items: list):
         order_id = 1
         for item in items:
             item_id = item['item_id']
-            if item['item_id'] not in list1:
+            if item['item_id'] not in seen:
                 list1.append((order_id,item['item_id']))
                 seen.add(item_id)
                 order_id += 1
