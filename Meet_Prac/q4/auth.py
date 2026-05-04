@@ -1,5 +1,5 @@
 from datetime import datetime,timedelta
-from jose import JWTError
+from jose import JWTError,jwt
 from passlib.context import CryptContext
 
 SECRET_KEY = 'MEET123'

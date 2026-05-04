@@ -9,7 +9,7 @@ class Userlogin(BaseModel):
     email: str
     password: str
 
-class Task(BaseModel):
+class TaskCreate(BaseModel):
     title:str
     priority: str
 
